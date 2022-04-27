@@ -12,7 +12,7 @@ import {
 
 const Header: NextPage = () => {
     return (
-        <header className="flex items-center flex-col sm:flex-row m-5 justify-betwee">
+        <header className="flex items-center flex-col sm:flex-row m-5 justify-between">
             <div className="flex flex-grow justify-evenly max-w-2xl">
                 <HeaderItem title="HOME" Icon={HomeIcon} />
                 <HeaderItem title="TRENDING" Icon={LightningBoltIcon} />
