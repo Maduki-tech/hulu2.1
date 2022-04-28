@@ -5,10 +5,11 @@ import Head from "next/head";
 import { Results } from "../components/Results";
 import requests from "../utis/requests";
 
-//@ts-ignore
-const Home: NextPage = ({ url }) => {
+type Props = {
+	url: any
+}
+const Home: NextPage<Props> = ({ url }) => {
     console.log(url);
-
     return (
         <div>
             <Head>
@@ -17,10 +18,8 @@ const Home: NextPage = ({ url }) => {
             </Head>
 
             <Header />
-            {/* Nav */}
             <Nav />
-            {/* Results */}
-            <Results />
+            <Results results= {url}/>
         </div>
     );
 };
