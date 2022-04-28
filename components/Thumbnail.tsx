@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import React, { forwardRef } from "react";
+import React from "react";
 import { ThumbUpIcon } from '@heroicons/react/outline'
 
 type Props = {
@@ -8,13 +8,11 @@ type Props = {
     result: any;
 };
 //INFO: What is forwardRef
-const Thumbnail: NextPage<Props> = forwardRef(({ result, key },ref) => {
+const Thumbnail: NextPage<Props> = ({ result, key },ref) => {
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     return (
 		//TODO: Look if there is an link in the api to go to the movie side or any  infos
 		<div 
-			//@ts-ignore
-			ref={ref}
 			key={key}
 			className="group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover: z-50">
             <Image
@@ -41,5 +39,5 @@ const Thumbnail: NextPage<Props> = forwardRef(({ result, key },ref) => {
             </div>
         </div>
     );
-});
+};
 export default Thumbnail;
